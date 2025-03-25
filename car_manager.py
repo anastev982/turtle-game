@@ -1,6 +1,5 @@
 import random
 from turtle import Turtle
-from player import Player
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
@@ -20,7 +19,7 @@ class CarManager:
             car.penup()
             car.color(random.choice(COLORS))
             car.goto(290, random.randint(-250, 250))
-            car.speed = random.randint(1,5)
+            car.speed = random.randint(1, 5)
             self.cars.append(car)
 
     def move(self):
@@ -52,5 +51,3 @@ class CarManager:
     def game_over(self):
         self.goto(0, 0)
         self.write("Game Over", align="center", font=("bold"))
-
-

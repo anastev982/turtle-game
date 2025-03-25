@@ -1,9 +1,8 @@
 import time
-from turtle import Screen, Turtle
+from turtle import Screen
 from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
-
 
 player = Player()
 screen = Screen()
@@ -22,8 +21,10 @@ for turtle in all_turtles:
 car_manager = CarManager()
 scoreboard = Scoreboard()
 
+
 def move_player():
     player.move()
+
 
 screen.listen()
 screen.onkey(move_player, "space")
@@ -36,10 +37,10 @@ while game_is_on:
     screen.update()
 
     if player.win():
-        if not level_completed :
+        if not level_completed:
             scoreboard.player_win()
             print("You Won!")
-            #car_manager.reset_game()
+            # car_manager.reset_game()
             player.reset_position()
             level_completed = True
 
@@ -48,11 +49,10 @@ while game_is_on:
             print("Level Up")
             time.sleep(1)
 
-
         if player.ycor() < 280:
-             level_completed = False
+            level_completed = False
 
-    #car_manager.move()
+    # car_manager.move()
 
     if car_manager.off_screen():
         car_manager.reset_game()

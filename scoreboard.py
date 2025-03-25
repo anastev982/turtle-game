@@ -1,5 +1,4 @@
 from turtle import Turtle
-from car_manager import CarManager
 
 FONT = ("Courier", 24, "normal")
 
@@ -17,12 +16,14 @@ class Scoreboard(Turtle):
         self.update_scoreboard()
         self.hideturtle()
         self.reset()
-        #self.level += 1
+        # self.level += 1
 
     def update_scoreboard(self):
         print("Updating scoreboard with Level:", self.level)
         self.clear()
-        self.write(f"Level: {self.level}", font=("Courier", 18, "normal"), align="left")
+        self.write(f"Level: {self.level}",
+                   font=("Courier", 18, "normal"),
+                   align="left")
 
     def update_level(self):
         self.goto(-270, 270)
@@ -33,9 +34,3 @@ class Scoreboard(Turtle):
     def game_over(self):
         self.goto(0, 0)
         self.write("Game Over", align="center", font=("Courier", 18, "normal"))
-
-
-
-
-
-
